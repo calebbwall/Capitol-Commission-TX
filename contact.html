@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get in Contact — Capitol Commission Texas</title>
+  <meta name="description" content="Contact Capitol Commission Texas. Reach Scot Wall by phone, email, or mail, or fill out our contact form." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ======== HEADER ======== -->
+  <header>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="close-x">&#10005;</span>
+    </button>
+  </header>
+
+  <!-- ======== NAV DROPDOWN ======== -->
+  <nav class="nav-dropdown" id="navDropdown" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://app.donortools.com" target="_blank" rel="noopener">Donate</a>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <!--
+    Image: Place a nighttime photo of the Texas Capitol exterior
+    at images/capitol-exterior-night.jpg for the hero background.
+  -->
+  <div class="hero-inner hero-contact">
+    <h1>Contact</h1>
+  </div>
+
+  <!-- ======== CONTACT INFO + FORM ======== -->
+  <section class="contact-info-section">
+    <div class="container">
+
+      <h2>Contact Us</h2>
+      <p class="contact-intro">
+        If you would like to call, email or write, please use the following information below, or fill out the form.
+      </p>
+
+      <div class="contact-details">
+        <div class="contact-detail">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>104 Casa Verde Cv Georgetown, TX 78633</span>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:swall@capitolcommissiontexas.org">swall@capitolcommissiontexas.org</a>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+12813824546">281.382.4546</a>
+        </div>
+      </div>
+
+      <!--
+        CONTACT FORM — powered by Formspree (free tier: 50 submissions/month)
+        Setup steps:
+          1. Go to https://formspree.io and sign up for a free account
+          2. Create a new form and copy the form ID (looks like: xrgjabc)
+          3. Replace YOUR_FORMSPREE_ID below with your actual form ID
+        Example: action="https://formspree.io/f/xrgjabc"
+      -->
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+        method="POST"
+        id="contactForm"
+      >
+        <input type="hidden" name="_subject" value="Capitol Commission Texas — Contact Form" />
+
+        <div class="form-group">
+          <label for="contact-name">Your name</label>
+          <input type="text" id="contact-name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email">Your email</label>
+          <input type="email" id="contact-email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <span class="check-label">Choose Any</span>
+          <div class="checkbox-list">
+            <label>
+              <input type="checkbox" name="interest" value="Become a supporter" />
+              Become a supporter
+            </label>
+            <label>
+              <input type="checkbox" name="interest" value="Receive ministry updates" />
+              Receive ministry updates
+            </label>
+            <label>
+              <input type="checkbox" name="interest" value="Learn more about Capitol Commission Texas" />
+              Learn more about Capitol Commission Texas
+            </label>
+            <label>
+              <input type="checkbox" name="interest" value="Contact me about having Scot speak/preach" />
+              Contact me about having Scot speak/preach
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-message">Comments or Questions <em>(optional)</em></label>
+          <textarea id="contact-message" name="message" placeholder="Your message"></textarea>
+        </div>
+
+        <div class="captcha-note">
+          <span>&#9989;</span>
+          <span>Spam protection enabled — all submissions are reviewed.</span>
+        </div>
+
+        <div>
+          <button type="submit" class="btn-blue">Submit</button>
+        </div>
+      </form>
+
+      <!-- ===== NEWSLETTER / INTEREST SIGNUP ===== -->
+      <hr class="form-divider" />
+
+      <div class="newsletter-section">
+        <h3>Stay Connected</h3>
+        <p>Sign up to receive prayer updates and ministry news from Capitol Commission Texas.</p>
+
+        <!--
+          NEWSLETTER FORM — also powered by Formspree
+          You can use the same form ID as above, or create a second form in Formspree
+          and replace YOUR_NEWSLETTER_FORMSPREE_ID below.
+        -->
+        <form
+          class="newsletter-form"
+          action="https://formspree.io/f/YOUR_NEWSLETTER_FORMSPREE_ID"
+          method="POST"
+          id="newsletterForm"
+        >
+          <input type="hidden" name="_subject" value="Capitol Commission Texas — Newsletter Signup" />
+
+          <div class="form-group">
+            <label for="nl-first">First Name <span class="req">*</span></label>
+            <input type="text" id="nl-first" name="first_name" placeholder="First Name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="nl-last">Last Name <span class="req">*</span></label>
+            <input type="text" id="nl-last" name="last_name" placeholder="Last Name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="nl-email">Email <span class="req">*</span></label>
+            <input type="email" id="nl-email" name="email" placeholder="Email Address" required />
+          </div>
+
+          <div class="form-group">
+            <span class="check-label">Choose Any That Apply: <span class="req">*</span></span>
+            <div class="checkbox-list">
+              <label>
+                <input type="checkbox" name="nl_interest" value="Become a Supporter" />
+                Become a Supporter
+              </label>
+              <label>
+                <input type="checkbox" name="nl_interest" value="Receive Ministry Updates" />
+                Receive Ministry Updates
+              </label>
+              <label>
+                <input type="checkbox" name="nl_interest" value="Learn More About Capitol Commission Texas" />
+                Learn More About Capitol Commission Texas
+              </label>
+              <label>
+                <input type="checkbox" name="nl_interest" value="Contact me About Having Scot Speak/Preach" />
+                Contact me About Having Scot Speak/Preach
+              </label>
+              <label>
+                <input type="checkbox" name="nl_interest" value="Other" />
+                Other
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="nl-message">Comments or Questions <em>(optional)</em></label>
+            <textarea id="nl-message" name="message" placeholder="Your Message"></textarea>
+          </div>
+
+          <div class="captcha-note">
+            <span>&#9989;</span>
+            <span>Spam protection enabled — all submissions are reviewed.</span>
+          </div>
+
+          <div>
+            <button type="submit" class="btn-blue btn-blue-wide">Submit Form</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer>
+    <p class="footer-tagline">Reaching every person with the Gospel of Jesus Christ.</p>
+    <h3>Learn More</h3>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://app.donortools.com" target="_blank" rel="noopener">Donate</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/capitolcommission" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/capitolcommission" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ======== SCROLL TO TOP ======== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
