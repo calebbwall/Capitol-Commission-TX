@@ -15,7 +15,7 @@
   --text:      #333333;
   --text-mid:  #555555;
   --border:    #d0d5dc;
-  --header-h:  56px;
+  --header-h:  64px;
 }
 
 /* ── RESET ── */
@@ -38,12 +38,55 @@ header {
   height: var(--header-h);
   background: var(--header-bg);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 16px;
   z-index: 1000;
 }
 
+/* Logo in header */
+.header-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.header-logo .logo-svg {
+  height: 46px;
+  width: auto;
+  max-width: none;
+}
+
+/* ── DESKTOP NAV (tabs across top) ── */
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 2px;
+}
+.nav-desktop a {
+  padding: 8px 13px;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.nav-desktop a:hover { background: rgba(255,255,255,0.18); color: #fff; }
+.nav-desktop a.active { background: rgba(255,255,255,0.22); color: #fff; }
+.nav-desktop .nav-donate {
+  background: var(--btn-blue);
+  color: #fff;
+  margin-left: 6px;
+  border-radius: 3px;
+}
+.nav-desktop .nav-donate:hover { background: #1d4ed8; }
+
+@media (min-width: 768px) {
+  .nav-desktop { display: flex; }
+  .menu-btn { display: none; }
+}
+
+/* ── HAMBURGER BUTTON (mobile only) ── */
 .menu-btn {
   background: #d0d5dc;
   border: none;
@@ -56,6 +99,7 @@ header {
   gap: 5px;
   cursor: pointer;
   border-radius: 2px;
+  flex-shrink: 0;
 }
 .menu-btn .bar {
   width: 22px;
@@ -74,7 +118,7 @@ header {
 .menu-btn.open .bar    { display: none; }
 .menu-btn.open .close-x { display: block; }
 
-/* ── NAV DROPDOWN ── */
+/* ── NAV DROPDOWN (mobile) ── */
 .nav-dropdown {
   position: fixed;
   top: var(--header-h);
@@ -95,6 +139,7 @@ header {
   transition: color .2s, background .2s;
 }
 .nav-dropdown a:hover { color: var(--navy); background: #e8ecf1; }
+.nav-dropdown a.active { color: var(--navy); font-weight: 700; }
 
 /* ── LOGO SVG ── */
 .logo-svg { width: 100%; max-width: 280px; height: auto; }
@@ -166,6 +211,7 @@ header {
 .hero-about   { background-color: #6b4f2a; background-image: url('../images/capitol-exterior-day.jpg'); }
 .hero-contact { background-color: #1e2d45; background-image: url('../images/capitol-exterior-night.jpg'); }
 .hero-golf    { background-color: #2a4a2a; background-image: url('../images/golf-hero.jpg'); }
+.hero-events  { background-color: #1e3569; background-image: url('../images/capitol-exterior-day.jpg'); }
 
 /* ── SECTIONS ── */
 .section { padding: 52px 24px; }
@@ -472,6 +518,65 @@ footer h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 20px; }
   gap: 10px;
 }
 .captcha-note span { font-size: 1.1rem; }
+
+/* ── EVENTS HUB PAGE ── */
+.events-intro {
+  background: var(--body-bg);
+  padding: 52px 24px 32px;
+  text-align: center;
+}
+.events-intro h2 { font-size: 1.75rem; font-weight: 800; margin-bottom: 12px; }
+.events-intro p  { color: var(--text-mid); line-height: 1.85; }
+
+.events-grid {
+  padding: 0 24px 52px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.event-hub-card {
+  background: var(--white);
+  border-radius: 6px;
+  box-shadow: 0 2px 14px rgba(0,0,0,.08);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.event-hub-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.event-hub-card .event-hub-body {
+  padding: 24px;
+}
+.event-hub-card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; color: var(--navy); }
+.event-hub-card .event-date { font-size: 0.85rem; font-weight: 700; color: var(--btn-blue); margin-bottom: 12px; }
+.event-hub-card p  { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 20px; }
+.event-hub-card .event-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.event-hub-card .event-actions a {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+.event-hub-card .btn-register { background: var(--navy); color: #fff; }
+.event-hub-card .btn-register:hover { background: #142550; }
+.event-hub-card .btn-donate-event { background: var(--btn-blue); color: #fff; }
+.event-hub-card .btn-donate-event:hover { background: #1d4ed8; }
+
+.events-empty {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--text-mid);
+  font-size: 1rem;
+}
+.events-loading {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--text-mid);
+}
 
 /* ── GOLF CLASSIC PAGE ── */
 .golf-intro {

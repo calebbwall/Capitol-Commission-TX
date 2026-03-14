@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  /* ── HAMBURGER / NAV DROPDOWN ── */
+  /* ── HAMBURGER / NAV DROPDOWN (mobile) ── */
   const menuBtn     = document.getElementById('menuBtn');
   const navDropdown = document.getElementById('navDropdown');
 
@@ -48,19 +48,33 @@
     });
   }
 
-  /* ── FORM SUCCESS REDIRECT (Formspree) ── */
-  // After Formspree submission, show a simple thank-you message
-  const forms = document.querySelectorAll('form[action*="formspree"]');
-  forms.forEach(function (form) {
-    form.addEventListener('submit', function (e) {
-      // Only intercept if Formspree ID has been set
-      if (form.action.includes('YOUR_FORMSPREE_ID') || form.action.includes('YOUR_NEWSLETTER_FORMSPREE_ID')) {
-        e.preventDefault();
-        alert('Thank you! Please set up your Formspree form ID in contact.html to enable form submissions.');
-        return;
-      }
-      // Otherwise let Formspree handle it normally (AJAX or redirect)
-    });
-  });
+  /* ── FORM THANK-YOU BANNER (Formsubmit.co) ── */
+  // After a form is submitted, Formsubmit redirects back with ?sent=1
+  // We show a thank-you banner at the top of the page.
+  if (window.location.search.indexOf('sent=1') !== -1) {
+    const banner = document.createElement('div');
+    banner.style.cssText = [
+      'position:fixed', 'top:0', 'left:0', 'right:0',
+      'background:#16a34a', 'color:#fff',
+      'text-align:center', 'padding:14px 20px',
+      'font-weight:700', 'font-size:1rem',
+      'z-index:2000', 'box-shadow:0 2px 8px rgba(0,0,0,.2)'
+    ].join(';');
+    banner.textContent = 'Thank you! Your message has been sent. We\'ll be in touch soon.';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = '✕';
+    closeBtn.style.cssText = [
+      'margin-left:16px', 'background:none', 'border:none',
+      'color:#fff', 'font-size:1rem', 'cursor:pointer', 'font-weight:700'
+    ].join(';');
+    closeBtn.addEventListener('click', function () { banner.remove(); });
+    banner.appendChild(closeBtn);
+
+    document.body.prepend(banner);
+
+    // Remove the ?sent=1 from the URL without reloading
+    history.replaceState(null, '', window.location.pathname);
+  }
 
 })();

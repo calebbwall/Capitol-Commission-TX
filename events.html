@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Capitol Commission Texas</title>
+  <meta name="description" content="Upcoming events hosted by Capitol Commission Texas, including the Scot Wall Golf Classic and other ministry events." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ======== HEADER ======== -->
+  <header>
+    <a href="index.html" class="header-logo" aria-label="Capitol Commission Texas Home">
+      <svg class="logo-svg" viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Capitol Commission Texas Logo">
+        <path d="M10 8 L90 8 L90 82 Q90 108 50 120 Q10 108 10 82 Z" fill="#ffffff"/>
+        <path d="M16 14 L84 14 L84 80 Q84 103 50 114 Q16 103 16 80 Z" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+        <polygon points="23,44 77,44 50,27" fill="#1e3569"/>
+        <rect x="22" y="43" width="56" height="4" fill="#1e3569"/>
+        <rect x="24" y="47" width="5" height="26" fill="#1e3569"/>
+        <rect x="33" y="47" width="5" height="26" fill="#1e3569"/>
+        <rect x="42" y="47" width="5" height="26" fill="#1e3569"/>
+        <rect x="51" y="47" width="5" height="26" fill="#1e3569"/>
+        <rect x="60" y="47" width="5" height="26" fill="#1e3569"/>
+        <rect x="22" y="73" width="56" height="4" fill="#1e3569"/>
+        <text x="103" y="50" font-family="Arial,sans-serif" font-weight="900" font-size="20" fill="#ffffff">CAPITOL</text>
+        <text x="172" y="42" font-family="Arial,sans-serif" font-size="10" fill="#ffffff">&#174;</text>
+        <text x="103" y="74" font-family="Arial,sans-serif" font-weight="900" font-size="20" fill="#ffffff">COMMISSION</text>
+        <line x1="103" y1="81" x2="313" y2="81" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+        <text x="113" y="101" font-family="Arial,sans-serif" font-size="12" fill="#ffffff">&#9733;</text>
+        <text x="133" y="102" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="#ffffff" letter-spacing="5">TEXAS</text>
+        <text x="259" y="101" font-family="Arial,sans-serif" font-size="12" fill="#ffffff">&#9733;</text>
+      </svg>
+    </a>
+    <nav class="nav-desktop" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html" class="active">Events</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.donortools.com/give/436" target="_blank" rel="noopener" class="nav-donate">Donate</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="close-x">&#10005;</span>
+    </button>
+  </header>
+
+  <!-- ======== MOBILE NAV DROPDOWN ======== -->
+  <nav class="nav-dropdown" id="navDropdown" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html" class="active">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.donortools.com/give/436" target="_blank" rel="noopener">Donate</a>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <div class="hero-inner hero-events">
+    <h1>Events</h1>
+  </div>
+
+  <!-- ======== INTRO ======== -->
+  <section class="events-intro">
+    <h2>Upcoming Events</h2>
+    <p>Join us at one of our upcoming events to support the Capitol Commission Texas ministry.</p>
+  </section>
+
+  <!-- ======== EVENTS LIST ======== -->
+  <div class="events-grid" id="eventsContainer">
+    <p class="events-loading"><i class="fas fa-circle-notch fa-spin"></i> Loading events…</p>
+  </div>
+
+  <!-- ======== FOOTER ======== -->
+  <footer>
+    <p class="footer-tagline">Reaching every person with the Gospel of Jesus Christ.</p>
+    <h3>Learn More</h3>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.donortools.com/give/436" target="_blank" rel="noopener">Donate</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/capitolcommission" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/capitolcommission" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ======== SCROLL TO TOP ======== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+
+  <script src="js/main.js"></script>
+  <script>
+    /*
+    ============================================================
+    EVENTS PAGE — HOW TO ADD / EDIT / REMOVE EVENTS
+    ============================================================
+
+    Events are managed in a Google Sheet. Anyone with edit access
+    to the sheet can add, remove, or update events — no coding needed!
+
+    STEP-BY-STEP SETUP (one time only):
+    ──────────────────────────────────
+    1. Go to Google Sheets (sheets.google.com) and create a new spreadsheet.
+
+    2. In the FIRST ROW, add these exact column headers (one per cell):
+       Title | Date | Description | ImageURL | RegistrationLink | DonationLink | Active
+
+    3. Add your events in the rows below. Example row:
+       Scot Wall Golf Classic | October 18, 2025 | Annual fundraising golf tournament... | https://... | https://contact.html | https://www.donortools.com/give/436 | Y
+
+       - Title:            Name of the event
+       - Date:             Display date (e.g. "October 18, 2025" or "TBD")
+       - Description:      A short paragraph about the event
+       - ImageURL:         Full URL to a photo (optional — leave blank if none)
+                           Tip: Upload photo to Google Drive, right-click > "Get link",
+                           set to "Anyone with the link", then use the direct image URL.
+       - RegistrationLink: URL for signing up / contacting about the event
+       - DonationLink:     URL for a specific fund (e.g. https://www.donortools.com/give/436)
+                           Leave blank to hide the Donate button for that event.
+       - Active:           Y to show the event, N to hide it without deleting the row.
+
+    4. Publish the sheet as CSV:
+       File > Share > Publish to web
+       → Change "Web page" dropdown to "Comma-separated values (.csv)"
+       → Click "Publish" and copy the URL it gives you.
+
+    5. Paste that URL into the SHEET_CSV_URL variable below, replacing the placeholder.
+
+    6. Save this file — events will now load from your Google Sheet automatically!
+       Changes in the sheet appear on the website within a few minutes.
+
+    ============================================================
+    */
+
+    // ▼ PASTE YOUR PUBLISHED GOOGLE SHEET CSV URL HERE ▼
+    var SHEET_CSV_URL = '';
+    // Example: 'https://docs.google.com/spreadsheets/d/e/XXXX/pub?output=csv'
+    // ▲ ─────────────────────────────────────────────── ▲
+
+    // Fallback events shown when the Google Sheet is not yet set up.
+    // These will also display alongside sheet events once the sheet is connected.
+    var FALLBACK_EVENTS = [
+      {
+        title: 'Scot Wall Golf Classic',
+        date: 'Date TBD — Check Back Soon',
+        description: 'Capitol Commission Texas is a 501(c)(3) organization. The Scot Wall Golf Classic is our annual fundraising golf tournament featuring a TrackMan Contest, Putting Contest, and 4-Man Scramble. All proceeds directly support the ministry of reaching every person in the Texas State Capitol with the Gospel of Jesus Christ.',
+        imageURL: 'images/golf-hero.jpg',
+        registrationLink: 'scot-wall-golf-classic.html',
+        donationLink: 'https://www.donortools.com/give/436',
+        active: 'Y'
+      }
+    ];
+
+    function parseCSV(text) {
+      var lines = text.trim().split('\n');
+      if (lines.length < 2) return [];
+      var headers = lines[0].split(',').map(function(h) { return h.trim().replace(/^"|"$/g, ''); });
+      var events = [];
+      for (var i = 1; i < lines.length; i++) {
+        var cols = splitCSVLine(lines[i]);
+        var obj = {};
+        headers.forEach(function(h, idx) {
+          obj[h] = (cols[idx] || '').trim();
+        });
+        events.push(obj);
+      }
+      return events;
+    }
+
+    function splitCSVLine(line) {
+      var result = [], cur = '', inQuote = false;
+      for (var i = 0; i < line.length; i++) {
+        var c = line[i];
+        if (c === '"') { inQuote = !inQuote; }
+        else if (c === ',' && !inQuote) { result.push(cur); cur = ''; }
+        else { cur += c; }
+      }
+      result.push(cur);
+      return result;
+    }
+
+    function normalizeEvent(row) {
+      return {
+        title:            row['Title'] || row['title'] || '',
+        date:             row['Date'] || row['date'] || '',
+        description:      row['Description'] || row['description'] || '',
+        imageURL:         row['ImageURL'] || row['imageURL'] || row['imageurl'] || '',
+        registrationLink: row['RegistrationLink'] || row['registrationLink'] || '',
+        donationLink:     row['DonationLink'] || row['donationLink'] || '',
+        active:           (row['Active'] || row['active'] || 'Y').toUpperCase()
+      };
+    }
+
+    function renderEvents(events) {
+      var container = document.getElementById('eventsContainer');
+      var active = events.filter(function(e) { return e.active === 'Y'; });
+
+      if (active.length === 0) {
+        container.innerHTML = '<p class="events-empty">No upcoming events right now — check back soon!</p>';
+        return;
+      }
+
+      container.innerHTML = active.map(function(ev) {
+        var imgHtml = ev.imageURL
+          ? '<img src="' + escHtml(ev.imageURL) + '" alt="' + escHtml(ev.title) + '" />'
+          : '';
+        var regBtn = ev.registrationLink
+          ? '<a href="' + escHtml(ev.registrationLink) + '" class="btn-register">Register / Learn More</a>'
+          : '';
+        var donateBtn = ev.donationLink
+          ? '<a href="' + escHtml(ev.donationLink) + '" target="_blank" rel="noopener" class="btn-donate-event">Donate</a>'
+          : '';
+        var actionsHtml = (regBtn || donateBtn)
+          ? '<div class="event-actions">' + regBtn + donateBtn + '</div>'
+          : '';
+
+        return '<div class="event-hub-card">'
+          + imgHtml
+          + '<div class="event-hub-body">'
+          + '<h3>' + escHtml(ev.title) + '</h3>'
+          + (ev.date ? '<p class="event-date"><i class="fas fa-calendar-alt"></i> ' + escHtml(ev.date) + '</p>' : '')
+          + '<p>' + escHtml(ev.description) + '</p>'
+          + actionsHtml
+          + '</div>'
+          + '</div>';
+      }).join('');
+    }
+
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // Load events
+    if (SHEET_CSV_URL) {
+      fetch(SHEET_CSV_URL)
+        .then(function(r) { return r.text(); })
+        .then(function(text) {
+          var sheetEvents = parseCSV(text).map(normalizeEvent);
+          // Merge: sheet events first, then fallback events not already covered by title
+          var sheetTitles = sheetEvents.map(function(e) { return e.title.toLowerCase(); });
+          var extraFallbacks = FALLBACK_EVENTS.filter(function(f) {
+            return sheetTitles.indexOf(f.title.toLowerCase()) === -1;
+          });
+          renderEvents(sheetEvents.concat(extraFallbacks));
+        })
+        .catch(function() {
+          renderEvents(FALLBACK_EVENTS);
+        });
+    } else {
+      renderEvents(FALLBACK_EVENTS);
+    }
+  </script>
+
+</body>
+</html>

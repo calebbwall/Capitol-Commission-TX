@@ -12,7 +12,35 @@
 
   <!-- ======== HEADER ======== -->
   <header>
-    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+    <a href="index.html" class="header-logo" aria-label="Capitol Commission Texas Home">
+      <svg class="logo-svg" viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Capitol Commission Texas Logo">
+        <path d="M10 8 L90 8 L90 82 Q90 108 50 120 Q10 108 10 82 Z" fill="#ffffff"/>
+        <path d="M16 14 L84 14 L84 80 Q84 103 50 114 Q16 103 16 80 Z" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+        <polygon points="23,44 77,44 50,27" fill="#1e3569"/>
+        <rect x="22" y="43" width="56" height="4" fill="#1e3569"/>
+        <rect x="24" y="47" width="5" height="26" fill="#1e3569"/>
+        <rect x="33" y="47" width="5" height="26" fill="#1e3569"/>
+        <rect x="42" y="47" width="5" height="26" fill="#1e3569"/>
+        <rect x="51" y="47" width="5" height="26" fill="#1e3569"/>
+        <rect x="60" y="47" width="5" height="26" fill="#1e3569"/>
+        <rect x="22" y="73" width="56" height="4" fill="#1e3569"/>
+        <text x="103" y="50" font-family="Arial,sans-serif" font-weight="900" font-size="20" fill="#ffffff">CAPITOL</text>
+        <text x="172" y="42" font-family="Arial,sans-serif" font-size="10" fill="#ffffff">&#174;</text>
+        <text x="103" y="74" font-family="Arial,sans-serif" font-weight="900" font-size="20" fill="#ffffff">COMMISSION</text>
+        <line x1="103" y1="81" x2="313" y2="81" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+        <text x="113" y="101" font-family="Arial,sans-serif" font-size="12" fill="#ffffff">&#9733;</text>
+        <text x="133" y="102" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="#ffffff" letter-spacing="5">TEXAS</text>
+        <text x="259" y="101" font-family="Arial,sans-serif" font-size="12" fill="#ffffff">&#9733;</text>
+      </svg>
+    </a>
+    <nav class="nav-desktop" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html" class="active">Events</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.donortools.com/give/436" target="_blank" rel="noopener" class="nav-donate">Donate</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -20,12 +48,13 @@
     </button>
   </header>
 
-  <!-- ======== NAV DROPDOWN ======== -->
-  <nav class="nav-dropdown" id="navDropdown" aria-label="Main navigation">
+  <!-- ======== MOBILE NAV DROPDOWN ======== -->
+  <nav class="nav-dropdown" id="navDropdown" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="events.html" class="active">Events</a>
     <a href="contact.html">Contact</a>
-    <a href="https://app.donortools.com" target="_blank" rel="noopener">Donate</a>
+    <a href="https://www.donortools.com/give/436" target="_blank" rel="noopener">Donate</a>
   </nav>
 
   <!-- ======== HERO ======== -->
@@ -120,7 +149,8 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="https://app.donortools.com" target="_blank" rel="noopener">Donate</a>
+      <a href="events.html">Events</a>
+      <a href="https://www.donortools.com/give/436" target="_blank" rel="noopener">Donate</a>
     </nav>
     <div class="footer-social">
       <a href="https://www.facebook.com/capitolcommission" target="_blank" rel="noopener" aria-label="Facebook">
